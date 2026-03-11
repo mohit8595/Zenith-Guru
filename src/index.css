@@ -1,0 +1,304 @@
+/* CSS Variables for Light and Dark Mode */
+:root {
+  /* Light Mode Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #f0f2f5;
+  --text-primary: #333333;
+  --text-secondary: #636e72;
+  --text-muted: #b2bec3;
+  --border-color: #e0e0e0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --card-bg: #ffffff;
+  --input-bg: #ffffff;
+  --overlay-bg: rgba(0, 0, 0, 0.5);
+  
+  /* Accent Colors */
+  --accent-primary: #667eea;
+  --accent-secondary: #764ba2;
+  --accent-gradient: linear-gradient(135deg, #667eea, #764ba2);
+  
+  /* Header Colors */
+  --header-bg: rgba(255, 255, 255, 0.95);
+  --header-text: #333333;
+  --header-border: rgba(0, 0, 0, 0.1);
+
+  /* Responsive spacing */
+  --container-padding: 5%;
+  --section-padding: 50px;
+}
+
+/* Global Responsive Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent horizontal scroll */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive containers */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* Responsive typography */
+h1 {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+h4 {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+p {
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  line-height: 1.6;
+}
+
+/* Responsive video embeds */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe,
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive tables */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-responsive table {
+  min-width: 600px;
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Smooth scrolling for anchor links */
+a[href^="#"] {
+  scroll-margin-top: 100px;
+}
+
+/* Touch-friendly button sizes */
+button, 
+.btn,
+a.btn {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 12px 24px;
+  touch-action: manipulation;
+}
+
+/* Dark Mode Colors */
+[data-theme="dark"] {
+  --bg-primary: #0d1318;
+  --bg-secondary: #1a202c;
+  --bg-tertiary: #2d3436;
+  --text-primary: #ffffff;
+  --text-secondary: #b2bec3;
+  --text-muted: #636e72;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --card-bg: #1a202c;
+  --input-bg: #2d3436;
+  --overlay-bg: rgba(0, 0, 0, 0.7);
+  
+  /* Header Colors */
+  --header-bg: rgba(13, 19, 24, 0.95);
+  --header-text: #ffffff;
+  --header-border: rgba(255, 255, 255, 0.1);
+}
+
+/* Global Dark Mode Styles */
+[data-theme="dark"] body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .header {
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--header-border);
+}
+
+[data-theme="dark"] .header .nav-link {
+  color: var(--header-text);
+}
+
+[data-theme="dark"] .header .logo-text {
+  color: var(--header-text);
+}
+
+[data-theme="dark"] .quick-feature {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .quick-feature h3 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .quick-feature p {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .class-card {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .class-card h3 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .class-card p {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .teacher-card {
+  background: var(--card-bg);
+}
+
+[data-theme="dark"] .teacher-info h3 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .section-header h2 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .section-header p {
+  color: var(--text-secondary);
+}
+
+/* Dark Mode Toggle Button Styles */
+.theme-toggle {
+  background: rgba(102, 126, 234, 0.1);
+  border: 2px solid rgba(102, 126, 234, 0.3);
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: #667eea;
+  margin-left: 10px;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.theme-toggle svg {
+  width: 22px;
+  height: 22px;
+}
+
+.theme-toggle .sun-icon {
+  display: none;
+}
+
+.theme-toggle .moon-icon {
+  display: block;
+}
+
+[data-theme="dark"] .theme-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #feca57;
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  background: linear-gradient(135deg, #feca57, #ff6b6b);
+  box-shadow: 0 4px 15px rgba(254, 202, 87, 0.4);
+}
+
+[data-theme="dark"] .theme-toggle .sun-icon {
+  display: block;
+}
+
+[data-theme="dark"] .theme-toggle .moon-icon {
+  display: none;
+}
+
+/* Smooth transition for theme changes */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Body padding for fixed header - removed to avoid double spacing */
+/* Each page component should handle its own padding-top if needed */
+body {
+  padding-top: 0;
+}
+
+/* Main content padding for fixed header */
+.main-content {
+  padding-top: 85px;
+  min-height: 100vh;
+}
+
+/* When header is shrunk */
+.main-content.header-shrunk-padded {
+  padding-top: 65px;
+}
+

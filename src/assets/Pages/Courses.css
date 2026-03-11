@@ -1,0 +1,1043 @@
+/* ============================================
+   COURSES PAGE - ZENITH GURU
+   ============================================ */
+
+.courses-page {
+  min-height: 100vh;
+  background: #f8f9fa;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.courses-hero-enhanced {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 80px 5% 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  animation: float 8s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-30px) translateX(20px); }
+}
+
+.hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+}
+
+.hero-glow-1 {
+  width: 300px;
+  height: 300px;
+  background: #667eea;
+  top: -100px;
+  left: -50px;
+}
+
+.hero-glow-2 {
+  width: 250px;
+  height: 250px;
+  background: #f093fb;
+  bottom: -50px;
+  right: -50px;
+}
+
+.courses-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.courses-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.courses-hero-enhanced h1 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.courses-hero-enhanced p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 30px;
+}
+
+/* Search Box */
+.hero-search-container {
+  max-width: 500px;
+  margin: 0 auto 25px;
+}
+
+.hero-search-box {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 12px;
+  padding: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.search-icon {
+  font-size: 1.1rem;
+  margin-left: 15px;
+}
+
+.hero-search-input {
+  flex: 1;
+  border: none;
+  padding: 14px 12px;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.clear-search-btn {
+  background: #f3f4f6;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 6px;
+}
+
+/* Category Pills */
+.category-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.category-pill {
+  padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.category-pill:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.category-pill.active {
+  background: white;
+  color: #667eea;
+}
+
+.pill-count {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  margin-left: 5px;
+}
+
+/* Trust Badges */
+.hero-trust-badges {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.trust-badge-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-weight: 600;
+}
+
+/* ============================================
+   FEATURED SECTION
+   ============================================ */
+.featured-section {
+  padding: 50px 5%;
+  background: white;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.section-header h2 {
+  font-size: 1.8rem;
+  color: #1f2937;
+  font-weight: 700;
+}
+
+.featured-carousel {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  height: 280px;
+}
+
+.featured-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.featured-card.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: all;
+}
+
+.featured-content {
+  color: white;
+  max-width: 400px;
+}
+
+.featured-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.featured-content h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.featured-teacher {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-bottom: 12px;
+}
+
+.featured-stats {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  font-size: 0.8rem;
+}
+
+.featured-price {
+  margin-bottom: 15px;
+}
+
+.featured-discounted {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.featured-original {
+  font-size: 0.9rem;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.free-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.featured-btn {
+  display: inline-block;
+  background: white;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.featured-icon-large {
+  font-size: 7rem;
+  opacity: 0.3;
+}
+
+.featured-indicators {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: transparent;
+  cursor: pointer;
+}
+
+.indicator.active {
+  background: white;
+}
+
+/* ============================================
+   STICKY CATEGORY BAR
+   ============================================ */
+.sticky-category-bar {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 15px 5%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+  overflow-x: auto;
+}
+
+.category-tabs-container {
+  display: flex;
+  gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.category-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  background: #f3f4f6;
+  border: none;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4b5563;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.category-tab:hover {
+  background: #e5e7eb;
+}
+
+.category-tab.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.tab-count {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+}
+
+/* ============================================
+   FILTERS BAR
+   ============================================ */
+.courses-main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 25px 5% 50px;
+}
+
+.filters-sort-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.filters-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.filter-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4b5563;
+  cursor: pointer;
+}
+
+.results-count {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.filters-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.view-toggle {
+  display: flex;
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 3px;
+}
+
+.view-btn {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+.view-btn.active {
+  background: white;
+  color: #667eea;
+}
+
+.sort-select {
+  padding: 10px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #4b5563;
+  background: white;
+  cursor: pointer;
+}
+
+/* ============================================
+   COURSE GRID
+   ============================================ */
+.courses-display {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.course-card-enhanced {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.course-card-enhanced:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.card-image-section {
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.card-icon-large {
+  font-size: 3.5rem;
+}
+
+.card-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.bestseller-badge {
+  background: #ef4444;
+  color: white;
+}
+
+.new-badge {
+  background: #10b981;
+  color: white;
+}
+
+.free-badge {
+  background: #10b981;
+  color: white;
+}
+
+.discount-badge {
+  background: #f59e0b;
+  color: white;
+}
+
+.card-quick-actions {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 6px;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.course-card-enhanced:hover .card-quick-actions {
+  opacity: 1;
+}
+
+.quick-action-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* Card Content */
+.card-content-section {
+  padding: 18px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.card-category {
+  display: inline-block;
+  background: #eef2ff;
+  color: #667eea;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.card-rating {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.8rem;
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.rating-count {
+  color: #9ca3af;
+  font-size: 0.7rem;
+}
+
+.card-title {
+  font-size: 1rem;
+  color: #1f2937;
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.card-teacher {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #6b7280;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+
+.card-meta {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.meta-item {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.card-features-compact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 15px;
+}
+
+.feature-pill {
+  background: #f0f4ff;
+  color: #667eea;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+
+.card-footer {
+  padding-top: 12px;
+  border-top: 1px solid #f3f4f6;
+}
+
+.card-pricing {
+  margin-bottom: 10px;
+}
+
+.price-free {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #10b981;
+}
+
+.price-discounted {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-right: 6px;
+}
+
+.price-original {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+
+.emi-text {
+  font-size: 0.75rem;
+  color: #667eea;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-explore-enhanced {
+  flex: 1;
+  padding: 10px 14px;
+  border: 2px solid #667eea;
+  background: white;
+  color: #667eea;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-explore-enhanced:hover {
+  background: #667eea;
+  color: white;
+}
+
+.btn-buy-enhanced {
+  flex: 1;
+  padding: 10px 14px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.btn-buy-enhanced:hover {
+  background: #5568d3;
+}
+
+.btn-buy-enhanced.btn-free {
+  background: #10b981;
+}
+
+.btn-buy-enhanced.btn-free:hover {
+  background: #059669;
+}
+
+/* No Results */
+.no-results-enhanced {
+  text-align: center;
+  padding: 50px 20px;
+  background: white;
+  border-radius: 14px;
+}
+
+.no-results-icon {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+}
+
+.no-results-enhanced h3 {
+  font-size: 1.3rem;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.no-results-enhanced p {
+  color: #6b7280;
+  margin-bottom: 18px;
+}
+
+.clear-all-btn {
+  padding: 12px 24px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ============================================
+   STATS SECTION
+   ============================================ */
+.stats-section {
+  padding: 50px 5%;
+  background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+}
+
+.stats-grid-enhanced {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.stat-card {
+  text-align: center;
+}
+
+.stat-icon-large {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.stat-content h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.stat-content p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   TESTIMONIALS
+   ============================================ */
+.testimonials-section {
+  padding: 50px 5%;
+  background: #f9fafb;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.testimonial-quote {
+  font-size: 2.5rem;
+  color: #667eea;
+  opacity: 0.3;
+  line-height: 1;
+  margin-bottom: -10px;
+}
+
+.testimonial-text {
+  color: #4b5563;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.testimonial-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.testimonial-info h4 {
+  color: #1f2937;
+  font-size: 0.9rem;
+}
+
+.testimonial-info span {
+  color: #9ca3af;
+  font-size: 0.75rem;
+}
+
+.testimonial-rating {
+  color: #f59e0b;
+}
+
+/* ============================================
+   FAQ SECTION
+   ============================================ */
+.faq-section {
+  padding: 50px 5%;
+  background: white;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.faq-icon {
+  width: 22px;
+  height: 22px;
+  background: #667eea;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.faq-answer {
+  color: #6b7280;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+.cta-section {
+  padding: 60px 5%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  text-align: center;
+}
+
+.cta-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.cta-content h2 {
+  font-size: 1.8rem;
+  color: white;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.cta-content p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 22px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-cta-primary {
+  padding: 14px 28px;
+  background: white;
+  color: #667eea;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.btn-cta-secondary {
+  padding: 14px 28px;
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .courses-hero-enhanced {
+    padding: 60px 4% 45px;
+  }
+
+  .courses-hero-enhanced h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-trust-badges {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .featured-carousel {
+    height: 340px;
+  }
+
+  .featured-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+  }
+
+  .featured-icon-large {
+    order: -1;
+    font-size: 4rem;
+    margin-bottom: 12px;
+  }
+
+  .category-tabs-container {
+    padding-bottom: 5px;
+  }
+
+  .filters-sort-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .courses-display {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid-enhanced {
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
